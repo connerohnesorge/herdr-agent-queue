@@ -1,0 +1,40 @@
+---
+title: herdr-agent-queue
+description: Queue prompts for coding agents in herdr and submit each one when the current turn ends.
+template: splash
+hero:
+  tagline: Queue the next prompt while your agent works. It is submitted as a new turn when the current turn ends, instead of being folded into it.
+  actions:
+    - text: Install
+      link: /herdr-agent-queue/guides/install/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/connerohnesorge/herdr-agent-queue
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+```bash
+herdr plugin install connerohnesorge/herdr-agent-queue --ref v0.1.0
+```
+
+## Why
+
+Claude Code folds messages typed during a turn into that turn. That steers the work in progress. Often you want the opposite: finish this, then do that. Codex has both modes. This [herdr](https://herdr.dev) plugin adds the queue mode to any agent herdr tracks.
+
+<CardGrid>
+	<Card title="Queue, not steer" icon="list-format">
+		Prompts wait until the agent's turn ends. Nothing is injected into the running turn.
+	</Card>
+	<Card title="One prompt per turn" icon="right-arrow">
+		Queued prompts are submitted in order, one per turn, each as a normal user message.
+	</Card>
+	<Card title="Safe around prompts" icon="warning">
+		An agent blocked on a permission prompt or question never receives a queued prompt.
+	</Card>
+	<Card title="Skill completion" icon="pencil">
+		Tab completes Claude Code `/skills` and `/commands`, with descriptions.
+	</Card>
+</CardGrid>

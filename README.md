@@ -4,6 +4,8 @@ A [herdr](https://herdr.dev) plugin that queues prompts for a coding agent and s
 
 Claude Code folds messages typed during a turn into that turn. Sometimes you want the opposite: finish what you're doing, then do this next. Related requests: [anthropics/claude-code#50246](https://github.com/anthropics/claude-code/issues/50246), [#63190](https://github.com/anthropics/claude-code/issues/63190), [#73661](https://github.com/anthropics/claude-code/issues/73661), [#87656](https://github.com/anthropics/claude-code/issues/87656).
 
+Docs: https://connerohnesorge.github.io/herdr-agent-queue/
+
 ## Requirements
 
 - herdr ≥ 0.8.0

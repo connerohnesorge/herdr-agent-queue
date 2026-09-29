@@ -1,0 +1,24 @@
+id = "conner.agent-queue"
+name = "Agent Queue"
+version = "0.1.0"
+min_herdr_version = "0.8.0"
+description = "Queue prompts for an agent and submit each one when its current turn ends"
+platforms = ["macos", "linux"]
+
+[[actions]]
+id = "open"
+title = "Queue a prompt for the focused agent"
+contexts = ["pane"]
+command = ["python3", "agent_queue.py", "open"]
+
+[[events]]
+on = "pane.agent_status_changed"
+command = ["python3", "agent_queue.py", "event"]
+
+[[panes]]
+id = "compose"
+title = "Queue prompt"
+placement = "popup"
+width = "70%"
+height = "40%"
+command = ["python3", "agent_queue.py", "compose"]
